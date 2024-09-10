@@ -1,3 +1,5 @@
+-- sqlite3 biblioteca.db
+
 DROP TABLE authors;
 CREATE TABLE authors
   (
