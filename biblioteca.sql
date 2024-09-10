@@ -9,6 +9,17 @@ CREATE TABLE authors
 
 INSERT INTO authors (au_id, au_fname, au_lname) VALUES ('A01', 'Brian', 'Kernighan');
 
+DROP TABLE publishers;
+CREATE TABLE publishers
+  (
+  pub_id   CHAR(3)     NOT NULL,
+  pub_name VARCHAR(20) NOT NULL,
+  city     VARCHAR(15) NOT NULL,
+  CONSTRAINT pk_publishers PRIMARY KEY (pub_id)
+  );
+
+INSERT INTO publishers (pub_id, pub_name, city) VALUES ('P01', 'Prentice Hall', 'Englewood Cliffs');
+
 DROP TABLE titles;
 CREATE TABLE titles
   (
