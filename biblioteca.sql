@@ -10,6 +10,7 @@ CREATE TABLE authors
   );
 
 INSERT INTO authors (au_id, au_fname, au_lname) VALUES ('A01', 'Brian', 'Kernighan');
+INSERT INTO authors (au_id, au_fname, au_lname) VALUES ('A02', 'Dennis', 'Ritchie');
 
 DROP TABLE publishers;
 CREATE TABLE publishers
@@ -21,6 +22,7 @@ CREATE TABLE publishers
   );
 
 INSERT INTO publishers (pub_id, pub_name, city) VALUES ('P01', 'Prentice Hall', 'Englewood Cliffs');
+INSERT INTO publishers (pub_id, pub_name, city) VALUES ('P02', 'Addison-Wesley', 'Reading');
 
 DROP TABLE titles;
 CREATE TABLE titles
@@ -35,6 +37,7 @@ CREATE TABLE titles
   );
 
 INSERT INTO titles (title_id, title_name, type, pub_id, pages, pubdate) VALUES ('T01', 'The C Programming Language', 'Computer', 'P01', 228, '1978-02-22');
+INSERT INTO titles (title_id, title_name, type, pub_id, pages, pubdate) VALUES ('T02', 'The Unix Programming Environment', 'Computer', 'P02', 345, '1984-10-27');
 
 DROP TABLE title_authors;
 CREATE TABLE title_authors
@@ -46,6 +49,7 @@ CREATE TABLE title_authors
   );
 
 INSERT INTO title_authors (title_id, au_id, au_order) VALUES ('T01', 'A01', 1);
+INSERT INTO title_authors (title_id, au_id, au_order) VALUES ('T02', 'A01', 1);
 
 DROP TABLE au_orders;
 CREATE TABLE au_orders (
@@ -56,3 +60,4 @@ CREATE TABLE au_orders (
   );
 
 INSERT INTO au_orders (title_id, author1, author2, author3) VALUES ('T01', 'A01', NULL, NULL);
+INSERT INTO au_orders (title_id, author1, author2, author3) VALUES ('T02', 'A01', NULL, NULL);
