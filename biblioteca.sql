@@ -21,6 +21,16 @@ CREATE TABLE publishers
   CONSTRAINT pk_publishers PRIMARY KEY (pub_id)
   );
 
+-- role: admin, user, libraran
+DROP TABLE users;
+CREATE TABLE users (
+    us_id INTEGER PRIMARY KEY NOT NULL,
+    us_fname VARCHAR(50) NOT NULL,
+    us_lname VARCHAR(50) NOT NULL,
+    role char(12)
+    CONSTRAINT pk_users PRIMARY KEY (us_id)
+);
+
 INSERT INTO publishers (pub_id, pub_name, city) VALUES ('P01', 'Prentice Hall', 'Englewood Cliffs');
 INSERT INTO publishers (pub_id, pub_name, city) VALUES ('P02', 'Addison-Wesley', 'Reading');
 
@@ -33,6 +43,7 @@ CREATE TABLE titles
     pub_id     CHAR(3)      NOT NULL,
     pages      INTEGER              ,
     pubdate    DATE                 ,
+    us_id      CHAR(3)     DEFAULT 0,       ,
     CONSTRAINT pk_titles PRIMARY KEY (title_id)
   );
 

@@ -1,4 +1,20 @@
+import java.sql.*;
+
 public class Biblioteca {
+
+    Connection conn = null;
+
+    void open() {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            conn = DriverManager.getConnection("jdbc:sqlite:biblioteca.db");
+            System.out.println("Conexión exitosa a la base de datos");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Controlador no encontrado: " + e.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Error de conexión: " + e.getMessage());
+        }
+    }
     public static void main(String[] args) {
 
         /*
